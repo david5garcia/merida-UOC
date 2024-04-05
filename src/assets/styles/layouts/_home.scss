@@ -1,3 +1,7 @@
+@function calculateBorderRadius($width) {
+  @return $width / 25;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -5,53 +9,83 @@
 body {
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: 100vh;
   margin: 0;
-  padding: 2rem;
   font-family: $font-family-sans-serif;
   font-size: 16px;
-  line-height: 24px;
-  background-color: $uoc-bg;
-  color: $uoc-corporate;
+  background-color: $bg;
+  color: $font-color;
 }
 
-.uoc-container {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  border-radius: 2rem;
+.welcome__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  background-color: #fff;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  width: min(90%, 700px);
+  margin-top: 2rem;
+
+  .welcome__title {
+    font-size: 44px;
+    font-weight: 600;
+  }
 }
 
-.uoc-logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5rem;
-  max-width: 200px;
+.image {
+  width: min(70%, 400px);
   height: auto;
-
-  @media (min-width: $mqMinWidth) {
-    max-width: none;
-  }
+  border-radius: calculateBorderRadius(400px);
 }
 
-.uoc-title {
-  font-family: $font-family-serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: $uoc-corporate;
-
-  @media (min-width: $mqMinWidth) {
-    font-size: 36px;
-  }
-}
-
-.uoc-footer {
-  margin-top: 1.5rem;
-  font-size: 0.75rem;
+.location__container,
+.qr-code-generator__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  width: min(90%, 700px);
+  margin-top: 2rem;
+}
+
+.attractions__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: min(90%, 1400px);
+  margin-top: 2rem;
+
+  .attractions__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+
+    .attractions__card {
+      background-color: #fff;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      border-radius: calculateBorderRadius(350px);
+      padding: 1rem;
+      margin: 1rem;
+    }
+  }
+}
+
+.qr-code-generator__title {
+  margin-bottom: 0;
+}
+
+.qr-code-generator__container button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: $font-color;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
 }
