@@ -1,27 +1,111 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss"><!-- do not remove this line! -->
-    <title>UOC Boilerplate</title>
-  </head>
-  <body>
-    <div class="uoc-container">
-      <picture>
-        <source srcset="./assets/images/logo.png?as=webp&width=350" type="image/webp" />
-        <img src="./assets/images/logo.png?width=350" alt="Universitat Oberta de Catalunya" class="uoc-logo" />
-      </picture>
-      <h1 class="uoc-title">Hello, UOC!</h1>
-      <p>
-        This is a starter template for the Advanced HTML and CSS Tools courses
-        from the Master's Program in Multimedia Applications and the Master's
-        Program in Web App and Website Development at the Universitat Oberta de
-        Catalunya.
-      </p>
-    </div>
-    <include src="./views/footer.html"></include>
-    <script type="module" src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
-  </body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="./assets/styles/main.scss"
+        />
+        <!-- do not remove this line! -->
+        <title>Mérida</title>
+    </head>
+    <body>
+        <section class="welcome__container">
+            <h1 class="welcome__title">¡Ven a Mérida!</h1>
+
+            <img
+                src="./assets/images/merida.jpeg?as=webp"
+                alt="Imagen de bienvenida"
+                class="image"
+            />
+            <p>
+                Mérida es un municipio y ciudad de España, capital de la
+                comunidad autónoma de Extremadura y sede de sus instituciones de
+                gobierno. Es famosa por su impresionante conjunto arqueológico
+                romano, declarado Patrimonio de la Humanidad por la UNESCO. Con
+                un clima mediterráneo, ofrece encanto antiguo en sus ruinas y
+                modernidad en su vida urbana, atrayendo a visitantes y
+                residentes por igual.
+            </p>
+        </section>
+        <section class="location__container">
+            <h2>¿Dónde se encuentra Mérida?</h2>
+            <img
+                src="./assets/images/ubicacion.png?as=webp"
+                alt="Imagen de la ubicación de Mérida en España"
+                class="image"
+            />
+        </section>
+        <section class="attractions__container">
+            <h2>¿Qué ver en Mérida?</h2>
+            <div class="attractions__grid">
+                <div class="attractions__card">
+                    <h3>Teatro Romano</h3>
+                    <img
+                        src="./assets/images/teatro.jpeg?as=webp"
+                        alt="Imagen del teatro romano de Mérida"
+                        class="image"
+                    />
+                    <p>
+                        El teatro romano de Mérida es uno de los monumentos más
+                        visitados de la ciudad. Fue construido en la época de
+                        Augusto y es uno de los mejor conservados de la
+                        península ibérica.
+                    </p>
+                </div>
+                <div class="attractions__card">
+                    <h3>Acueducto de los Milagros</h3>
+                    <img
+                        src="./assets/images/acueducto.jpeg?as=webp"
+                        alt="Imagen del acueducto de los Milagros"
+                        class="image"
+                    />
+                    <p>
+                        El acueducto de los Milagros es una de las
+                        construcciones más impresionantes de Mérida. Fue
+                        construido en el siglo I d.C. para abastecer de agua a
+                        la ciudad.
+                    </p>
+                </div>
+                <div class="attractions__card">
+                    <h3>Foro Romano</h3>
+                    <img
+                        src="./assets/images/foro.jpeg?as=webp"
+                        alt="Imagen del foro romano de Mérida"
+                        class="image"
+                    />
+                    <p>
+                        El foro romano de Mérida es uno de los conjuntos
+                        arqueológicos más importantes de la ciudad. Fue el
+                        centro de la vida política, religiosa y social de la
+                        Mérida romana.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="qr-code-generator__container">
+            <h2 class="qr-code-generator__title ">Generadora tu QR</h2>
+            <p>¡con la bandera de Extremadura!</p>
+            <div class="qr-code-generator__form">
+                <label for="qr-code-text">Url:</label>
+                <input
+                    type="text"
+                    id="qr-code-text"
+                    name="qr-code-text"
+                    placeholder="Ej: https://www.merida.es/"
+                />
+                <button id="generate-qr-code">Generar QR</button>
+            </div>
+            <div class="qr-code-generator__result">
+                <h3>Resultado:</h3>
+                <canvas id="qr-code"></canvas>
+            </div>
+        </section>
+        <include src="./views/footer.html"></include>
+        <script type="module" src="./assets/scripts/main.js"></script>
+        <!-- do not remove this line! -->
+    </body>
 </html>
